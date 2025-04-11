@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Zero ao Close - Curso de Maquiagem Profissional</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: '#C17A6C',
+                        bege: '#E5D3C5',
+                        dourado: '#D4AF37'
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'montserrat': ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+        }
+        .mobile-menu.active {
+            display: block;
+            animation: slideDown 0.3s ease-out forwards;
+        }
+        @keyframes slideDown {
+            from {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #4a5568;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .mobile-menu a:hover {
+            color: #C17A6C;
+            background: #f7f7f7;
+        }
+        .hover-grow {
+            transition: transform 0.3s ease;
+        }
+        .hover-grow:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-playfair font-bold text-terracota">Do Zero ao Close</a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#curso" class="text-gray-600 hover:text-terracota transition">O Curso</a>
+                    <a href="#modulos" class="text-gray-600 hover:text-terracota transition">Módulos</a>
+                    <a href="#mentoria" class="text-gray-600 hover:text-terracota transition">Mentoria</a>
+                    <a href="#sobre" class="text-gray-600 hover:text-terracota transition">Sobre</a>
+                    <a href="#faq" class="text-gray-600 hover:text-terracota transition">FAQ</a>
+                </div>
+                <button class="md:hidden bg-white p-3 hover:bg-gray-50 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-terracota" id="menuButton" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <i class="fas fa-bars text-2xl text-terracota"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="py-2">
+                <a href="#curso" class="block px-6 py-3 hover:bg-gray-50 border-b border-gray-100">O Curso</a>
+                <a href="#modulos" class="block px-6 py-3 hover:bg-gray-50 border-b border-gray-100">Módulos</a>
+                <a href="#mentoria" class="block px-6 py-3 hover:bg-gray-50 border-b border-gray-100">Mentoria</a>
+                <a href="#sobre" class="block px-6 py-3 hover:bg-gray-50 border-b border-gray-100">Sobre</a>
+                <a href="#faq" class="block px-6 py-3 hover:bg-gray-50">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 bg-gradient-to-r from-bege to-white">
+        <div class="container mx-auto px-4 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-terracota mb-6">
+                        Do Zero ao Close
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-gray-700 mb-8">
+                        Torne-se uma maquiadora profissional, do básico ao avançado
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Aprenda técnicas profissionais, conquiste clientes e transforme sua paixão em liberdade financeira.
+                    </p>
+                    <a href="https://pay.herospark.com/do-zero-ao-close-416851" target="_blank" 
+                       class="inline-block bg-terracota text-white font-semibold px-8 py-4 rounded-lg hover:bg-opacity-90 transition transform hover:scale-105">
+                        Quero começar agora
+                    </a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.pexels.com/photos/457701/pexels-photo-457701.jpeg" 
+                         alt="Maquiagem profissional" 
+                         class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section id="curso" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="font-playfair text-3xl md:text-4xl text-center font-bold text-terracota mb-12">
+                Curso 100% online e completo
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-bege hover:shadow-xl transition hover-grow">
+                    <div class="text-dourado text-3xl mb-4">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Vídeo-aulas gravadas</h3>
+                    <p class="text-gray-600">Aulas de alta qualidade com conteúdo profissional e prático</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-bege hover:shadow-xl transition hover-grow">
+                    <div class="text-dourado text-3xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Aulas bônus ao vivo</h3>
+                    <p class="text-gray-600">Tire suas dúvidas e aprenda ainda mais em nossas aulas ao vivo</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-bege hover:shadow-xl transition hover-grow">
+                    <div class="text-dourado text-3xl mb-4">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Materiais extras</h3>
+                    <p class="text-gray-600">PDFs, checklists e lista de produtos recomendados</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-bege hover:shadow-xl transition hover-grow">
+                    <div class="text-dourado text-3xl mb-4">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Certificado</h3>
+                    <p class="text-gray-600">Receba seu certificado de conclusão ao finalizar o curso</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-bege hover:shadow-xl transition hover-grow">
+                    <div class="text-dourado text-3xl mb-4">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Acesso vitalício</h3>
+                    <p class="text-gray-600">Estude no seu ritmo com acesso ilimitado ao conteúdo</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-bege hover:shadow-xl transition hover-grow">
+                    <div class="text-dourado text-3xl mb-4">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Suporte contínuo</h3>
+                    <p class="text-gray-600">Tire suas dúvidas e receba orientação durante todo o curso</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modulos" class="py-20 bg-bege bg-opacity-30">
+        <div class="container mx-auto px-4">
+            <h2 class="font-playfair text-3xl md:text-4xl text-center font-bold text-terracota mb-12">
+                Estrutura dos Módulos
+            </h2>
+            <div class="space-y-6">
+                <!-- Module 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition hover-grow">
+                    <h3 class="text-xl font-semibold text-terracota mb-4">
+                        <i class="fas fa-star text-dourado mr-2"></i>
+                        Módulo 1 – Introdução à Maquiagem Profissional
+                    </h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Boas-vindas</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Diferença entre maquiagem social, editorial e artística</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Como se tornar um maquiador profissional</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Materiais essenciais e kit básico</li>
+                    </ul>
+                </div>
+                <!-- Module 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition hover-grow">
+                    <h3 class="text-xl font-semibold text-terracota mb-4">
+                        <i class="fas fa-spa text-dourado mr-2"></i>
+                        Módulo 2 – Preparação da Pele e Skincare
+                    </h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Tipos de pele</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Primer ideal</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Hidratação e fixação</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Correção de imperfeições</li>
+                    </ul>
+                </div>
+                <!-- Module 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition hover-grow">
+                    <h3 class="text-xl font-semibold text-terracota mb-4">
+                        <i class="fas fa-magic text-dourado mr-2"></i>
+                        Módulo 3 – Pele Perfeita
+                    </h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Escolha da base perfeita</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Aplicação correta de base/corretivo</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Técnicas de contorno/iluminação</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Pele resistente e duradoura</li>
+                    </ul>
+                </div>
+                <!-- Module 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition hover-grow">
+                    <h3 class="text-xl font-semibold text-terracota mb-4">
+                        <i class="fas fa-eye text-dourado mr-2"></i>
+                        Módulo 4 – Olhos: Técnicas do Básico ao Avançado
+                    </h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Esfumado simples e degradê</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Cut crease e semi</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Delineados</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Cílios postiços sem erro</li>
+                    </ul>
+                </div>
+                <!-- Module 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition hover-grow">
+                    <h3 class="text-xl font-semibold text-terracota mb-4">
+                        <i class="fas fa-kiss text-dourado mr-2"></i>
+                        Módulo 5 – Boca e Finalização
+                    </h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Correção dos lábios</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Batom matte, cremoso e glossy</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Fixação e retoques</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Spray finalizador</li>
+                    </ul>
+                </div>
+                <!-- Module 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition hover-grow">
+                    <h3 class="text-xl font-semibold text-terracota mb-4">
+                        <i class="fas fa-camera text-dourado mr-2"></i>
+                        Módulo 6 – Maquiagens por Ocasião
+                    </h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Social</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Festa</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Fotografia</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Peles maduras</li>
+                    </ul>
+                </div>
+                <!-- Module 7 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition hover-grow">
+                    <h3 class="text-xl font-semibold text-terracota mb-4">
+                        <i class="fas fa-briefcase text-dourado mr-2"></i>
+                        Módulo 7 – Profissão Maquiador
+                    </h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Portfólio</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Precificação</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Instagram/TikTok</li>
+                        <li><i class="fas fa-check text-dourado mr-2"></i>Atendimento e fidelização</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://pay.herospark.com/do-zero-ao-close-416851" target="_blank" 
+                   class="inline-block bg-terracota text-white font-semibold px-8 py-4 rounded-lg hover:bg-opacity-90 transition transform hover:scale-105">
+                    Quero me inscrever agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentoria Section -->
+    <section id="mentoria" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="bg-gradient-to-r from-terracota to-dourado p-1 rounded-2xl">
+                <div class="bg-white rounded-2xl p-8">
+                    <h2 class="font-playfair text-3xl md:text-4xl text-center font-bold text-terracota mb-8">
+                        Mentoria Close Pro
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <p class="text-xl text-gray-700 mb-6">
+                                Assinatura de mentoria para alunas que querem um acompanhamento estratégico.
+                            </p>
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-dourado text-xl mr-3"></i>
+                                    <span>1 encontro ao vivo por mês</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-dourado text-xl mr-3"></i>
+                                    <span>Feedbacks individuais</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-dourado text-xl mr-3"></i>
+                                    <span>Grupo exclusivo</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-dourado text-xl mr-3"></i>
+                                    <span>Suporte contínuo</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-dourado text-xl mr-3"></i>
+                                    <span>Aulas estratégicas de carreira</span>
+                                </li>
+                            </ul>
+                            <div class="text-center md:text-left">
+                                <p class="text-2xl font-semibold mb-4">
+                                    <span class="text-gray-600">Por apenas</span>
+                                    <span class="text-terracota">R$ 159,70</span>
+                                    <span class="text-gray-600">por mês</span>
+                                </p>
+                                <a href="https://pay.herospark.com/mentoria-close-pro-416876" target="_blank" 
+                                   class="inline-block bg-dourado text-white font-semibold px-8 py-4 rounded-lg hover:bg-opacity-90 transition transform hover:scale-105">
+                                    Quero fazer parte
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hidden md:block">
+                            <img src="https://images.pexels.com/photos/7712474/pexels-photo-7712474.jpeg" 
+                                 alt="Mentoria Close Pro" 
+                                 class="rounded-lg shadow-xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Helo Section -->
+    <section id="sobre" class="py-20 bg-bege bg-opacity-30">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-playfair text-3xl md:text-4xl text-center font-bold text-terracota mb-12">
+                    Sobre a Helo
+                </h2>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                
+                <div class="C:\Users\crist\Downloads\pixelcut-export.jpeg">
+                    <div class="md:w-1/3">
+                             alt="Heloisa Maceira" 
+                             class="rounded-full shadow-xl w-64 h-64 object-cover mx-auto">
+                    </div>
+                    <div class="md:w-2/3">
+                        <blockquote class="text-lg text-gray-700 mb-6">
+                            "Eu sou a Helo, e já estive exatamente onde você está."
+                        </blockquote>
+                        <p class="text-gray-600 mb-4">
+                            Maquiadora profissional, universitária de biomedicina e apaixonada por transformar autoestima em carreira.
+                        </p>
+                        <p class="text-gray-600">
+                            Depois de passar por dúvidas, inseguranças e recomeços, hoje ensino alunas a confiarem no próprio talento e a viverem da beleza com poder.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Para Quem É Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="font-playfair text-3xl md:text-4xl text-center font-bold text-terracota mb-12">
+                Para quem é esse curso?
+            </h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg border border-bege">
+                        <div class="text-dourado text-3xl mb-4">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Iniciantes</h3>
+                        <p class="text-gray-600">
+                            Nunca pegou num pincel mas sonha em maquiar profissionalmente
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg border border-bege">
+                        <div class="text-dourado text-3xl mb-4">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Em desenvolvimento</h3>
+                        <p class="text-gray-600">
+                            Já sabe maquiar, mas quer se posicionar com autoridade
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg border border-bege">
+                        <div class="text-dourado text-3xl mb-4">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Empreendedoras</h3>
+                        <p class="text-gray-600">
+                            Quer ganhar dinheiro com maquiagem, mesmo sem depender das redes
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg border border-bege">
+                        <div class="text-dourado text-3xl mb-4">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Profissionais</h3>
+                        <p class="text-gray-600">
+                            Quer independência, agenda cheia e clientes reais
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-bege bg-opacity-30">
+        <div class="container mx-auto px-4">
+            <h2 class="font-playfair text-3xl md:text-4xl text-center font-bold text-terracota mb-12">
+                Perguntas Frequentes
+            </h2>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-3">É para iniciantes?</h3>
+                    <p class="text-gray-600">
+                        Sim! O curso foi desenvolvido pensando em quem está começando, com conteúdo do básico ao avançado.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-3">Preciso ter kit completo?</h3>
+                    <p class="text-gray-600">
+                        Não é necessário ter um kit completo para começar. Você receberá uma lista com os itens essenciais e poderá montar seu kit aos poucos.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-3">Recebo certificado?</h3>
+                    <p class="text-gray-600">
+                        Sim! Ao concluir o curso, você receberá um certificado digital de conclusão.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-3">Como acesso as aulas?</h3>
+                    <p class="text-gray-600">
+                        As aulas são 100% online e podem ser acessadas de qualquer dispositivo com internet. Você terá acesso vitalício ao conteúdo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-playfair text-2xl font-bold text-terracota mb-4">Do Zero ao Close</h3>
+                    <p class="text-gray-600">
+                        Transformando paixão em profissão
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="https://www.instagram.com/heloisamaceira.makeup/" target="_blank" 
+                               class="text-gray-600 hover:text-terracota transition">
+                                <i class="fab fa-instagram mr-2"></i>Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://api.whatsapp.com/send?phone=5511977574170" target="_blank" 
+                               class="text-gray-600 hover:text-terracota transition">
+                                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:heloisa.s.maceira@gmail.com" 
+                               class="text-gray-600 hover:text-terracota transition">
+                                <i class="fas fa-envelope mr-2"></i>E-mail
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-600 hover:text-terracota transition">
+                                Termos e condições
+                            </a>
+                        </li>
+                        <li>
+                            <p class="text-gray-600">
+                                © 2024 Heloisa da Silva Maceira
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <p class="text-gray-600 italic">
+                    "Você nasceu pra brilhar – agora é só aprender como."
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('menuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            let isMenuOpen = false;
+
+            // Toggle menu with animation
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                if (isMenuOpen) {
+                    mobileMenu.style.display = 'block';
+                    // Force a reflow
+                    mobileMenu.offsetHeight;
+                    mobileMenu.classList.add('active');
+                } else {
+                    mobileMenu.classList.remove('active');
+                    // Wait for animation to finish before hiding
+                    setTimeout(() => {
+                        if (!isMenuOpen) {
+                            mobileMenu.style.display = 'none';
+                        }
+                    }, 300);
+                }
+                menuButton.setAttribute('aria-expanded', isMenuOpen);
+            }
+
+            // Toggle menu on button click
+            menuButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMenu();
+            });
+
+            // Close menu when clicking links
+            document.querySelectorAll('.mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (isMenuOpen) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (isMenuOpen && !mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                    toggleMenu();
+                }
+            });
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
